@@ -9,9 +9,15 @@ recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-document.querySelector('button').addEventListener('click', () => {
+const btn = document.getElementById('send');
+
+btn.addEventListener('click', () => {
+  btn.classList.add('is-loading');
   recognition.start();
 });
+// document.querySelector('button').addEventListener('click', () => {
+//   recognition.start();
+// });
 
 recognition.addEventListener('speechstart', () => {
   console.log('Speech has been detected.');
